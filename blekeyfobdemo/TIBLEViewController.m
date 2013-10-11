@@ -145,8 +145,14 @@
     if(DeviceFound)
     {
         // Start battery indicator timer, calls batteryIndicatorTimer method every 2 seconds
+<<<<<<< HEAD
         [NSTimer scheduledTimerWithTimeInterval:(float)2.0 target:self selector:@selector(batteryIndicatorTimer:) userInfo:nil repeats:YES]; 
         [t enableAccelerometer:[t activePeripheral]];   // Enable accelerometer (if found)
+=======
+        [NSTimer scheduledTimerWithTimeInterval:(float)2.0 target:self selector:@selector(batteryIndicatorTimer:) userInfo:nil repeats:YES];
+        
+        //[t enableAccelerometer:[t activePeripheral]];   // Enable accelerometer (if found)
+>>>>>>> RemoveAccelerometerService
         [t enableButtons:[t activePeripheral]];         // Enable button service (if found)
         [t enableTXPower:[t activePeripheral]];         // Enable TX power service (if found)
         [TIBLEUISpinner stopAnimating];
