@@ -208,10 +208,31 @@
         [t soundBuzzer:0x00 p:[t activePeripheral]]; //Sound buzzer with 0x02 as data value
         
     }
+#if 1
+    else if([str isEqualToString:@"No alert"])
+    {
+        [TIBLEUIBuzzer setTitle:@"Keyfob_LED1" forState:UIControlStateNormal];
+        
+        [t soundBuzzer:0x03 p:[t activePeripheral]]; //Sound buzzer with 0x02 as data value
+        
+    }
+    else if([str isEqualToString:@"Keyfob_LED1"])
+    {
+        [TIBLEUIBuzzer setTitle:@"Keyfob_LED2" forState:UIControlStateNormal];
+        
+        [t soundBuzzer:0x04 p:[t activePeripheral]]; //Sound buzzer with 0x02 as data value
+        
+    }
+    else if([str isEqualToString:@"Keyfob_LED2"])
+    {
+        [TIBLEUIBuzzer setTitle:@"Sound buzzer" forState:UIControlStateNormal];
+    }
+#else
     else if([str isEqualToString:@"No alert"])
     {
         [TIBLEUIBuzzer setTitle:@"Sound buzzer" forState:UIControlStateNormal];
     }
+#endif
 }
 
 @end

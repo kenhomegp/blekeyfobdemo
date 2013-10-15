@@ -685,7 +685,8 @@
 }
 
 - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral {
-    printf("Connection to peripheral with UUID : %s successfull\r\n",[self UUIDToString:peripheral.UUID]);
+    printf("###Connection to peripheral with UUID : %s successfull\r\n",[self UUIDToString:peripheral.UUID]);
+    
     self.activePeripheral = peripheral;
     [self.activePeripheral discoverServices:nil];
     [central stopScan];
@@ -864,7 +865,8 @@
 }
 
 - (void)peripheral:(CBPeripheral *)peripheral didWriteValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
-    
+    if(error)
+        printf("Error writing characteristic value\r\n");
 }
 
 - (void)peripheral:(CBPeripheral *)peripheral didWriteValueForDescriptor:(CBDescriptor *)descriptor error:(NSError *)error {
